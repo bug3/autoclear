@@ -16,17 +16,18 @@ install () {
     sudo cp $fileName $toolPath
 
     echo -e "\n$profileCommand" >> ~/$shellrc
-    sudo bash -c "echo -e '\n$profileCommand' >> /root/$shellrc"
+    sudo bash -c "echo -e '\n$profileCommand' >> $rootPath/$shellrc"
 }
 
 uninstall () {
     sudo rm $toolPath/$fileName
 
     sed -i "/$toolComment/d" ~/$shellrc
-    sudo sed -i "/$toolComment/d" /root/$shellrc
+    sudo sed -i "/$toolComment/d" $rootPath/$shellrc
 }
 
 [[ -e ~/.bashrc ]] && shellrc=".bashrc" || shellrc=".bash_profile"
+[[ "$OSTYPE" == "darwin"* ]] && rootPath="/var/root" || rootPath="/root"
 
 if [ $# -eq 0 ]; then
 	install
