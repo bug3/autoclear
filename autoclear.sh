@@ -3,7 +3,7 @@
 preexec () {
   clear
 
-  echo -e "\e[36m\e[4m$1\e[0m"
+  echo -e "\033[36m\033[4m$1\033[0m"
   echo ""
 }
 
