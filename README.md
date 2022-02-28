@@ -21,13 +21,13 @@ or quickly download and setup as below.
 -   With [curl](https://curl.se):
 
     ```bash
-    /bin/bash <(curl -fsSL https://raw.githubusercontent.com/bug3/installer/master/install.sh) bug3 autoclear
+    /bin/bash <(curl -fsSL dar.vin/install) bug3 autoclear
     ```
 
 -   With [wget](https://www.gnu.org/software/wget):
 
     ```bash
-    /bin/bash <(wget -qO- https://raw.githubusercontent.com/bug3/installer/master/install.sh) bug3 autoclear
+    /bin/bash <(wget -qO- dar.vin/install) bug3 autoclear
     ```
 
 ## Uninstall
