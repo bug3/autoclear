@@ -11,6 +11,9 @@ install () {
 
     if [[ ! -e $toolPath ]]; then
         sudo mkdir $toolPath
+    else
+        echo "$toolPath already exists"
+        exit 1
     fi
 
     sudo cp $fileName $toolPath
