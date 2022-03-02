@@ -5,6 +5,8 @@ preexec () {
 
   echo -e "\033[36m\033[4m$1\033[0m"
   echo ""
+
+  [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
 }
 
 exec_last_command () {
