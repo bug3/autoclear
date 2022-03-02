@@ -23,7 +23,7 @@ install () {
 }
 
 uninstall () {
-    sudo rm $toolPath/$fileName
+    sudo rm -r $toolPath
 
     sed -i "/$toolComment/d" ~/$shellrc
     sudo sed -i "/$toolComment/d" $rootPath/$shellrc
