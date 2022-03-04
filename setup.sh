@@ -19,6 +19,8 @@ install () {
 
     appendText
     sudo bash -c "source $textEdit $rootPath/$shellrc; appendText"
+
+    echo "Installation completed successfully"
 }
 
 uninstall () {
@@ -26,6 +28,8 @@ uninstall () {
 
     removeText
     sudo bash -c "source $textEdit $rootPath/$shellrc; removeText"
+
+    echo "Uninstallation completed successfully"
 }
 
 [[ -e ~/.bashrc ]] && shellrc=".bashrc" || shellrc=".bash_profile"
