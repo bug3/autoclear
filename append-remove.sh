@@ -1,7 +1,7 @@
 #!/bin/bash
 
 destFile=$1
-textFile=appendices
+textFile=appendices.sh
 tempFile=.autoclear.tmp
 
 cp $destFile $destFile.bak
