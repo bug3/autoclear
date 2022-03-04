@@ -3,8 +3,7 @@
 toolName="autoclear"
 fileName="$toolName.sh"
 toolPath="/usr/share/$toolName"
-toolComment="# $toolName tool"
-profileCommand="source $toolPath/$fileName $toolComment"
+textEdit="append-remove.sh"
 
 install () {
     chmod u+x $fileName
@@ -18,19 +17,21 @@ install () {
 
     sudo cp $fileName $toolPath
 
-    echo -e "\n$profileCommand" >> ~/$shellrc
-    sudo bash -c "echo -e '\n$profileCommand' >> $rootPath/$shellrc"
+    appendText
+    sudo bash -c "source $textEdit $rootPath/$shellrc; appendText"
 }
 
 uninstall () {
     sudo rm -r $toolPath
 
-    sed -i "/$toolComment/d" ~/$shellrc
-    sudo sed -i "/$toolComment/d" $rootPath/$shellrc
+    removeText
+    sudo bash -c "source $textEdit $rootPath/$shellrc; removeText"
 }
 
 [[ -e ~/.bashrc ]] && shellrc=".bashrc" || shellrc=".bash_profile"
 [[ "$OSTYPE" == "darwin"* ]] && rootPath="/var/root" || rootPath="/root"
+
+source $textEdit ~/$shellrc
 
 if [ $# -eq 0 ]; then
 	install
