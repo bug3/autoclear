@@ -1,8 +1,8 @@
 #!/bin/bash
 
-destFile=dest.txt
+destFile=$1
 textFile=appendices
-tempFile=.temp.txt
+tempFile=.autoclear.tmp
 
 cp $destFile $destFile.bak
 
