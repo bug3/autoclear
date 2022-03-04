@@ -39,4 +39,4 @@ elif [ $1 == "-r" ]; then
 	uninstall
 fi
 
-exec bash --login
+exec bash
