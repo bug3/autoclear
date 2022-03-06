@@ -4,6 +4,7 @@ toolName="autoclear"
 fileName="$toolName.sh"
 toolPath="/usr/share/$toolName"
 textEdit="append-remove.sh"
+finishMessage="Restart the console to apply changes"
 
 install () {
     chmod u+x $fileName
@@ -39,4 +40,4 @@ elif [ $1 == "-r" ]; then
 	uninstall
 fi
 
-echo "Restart the console to apply changes"
+echo -e "\033[31m\033[1m$finishMessage\033[0m"
