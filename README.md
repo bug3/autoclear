@@ -32,4 +32,4 @@ or quickly download and setup as below.
 
 ## Uninstall
 
-Use [uninstall](https://github.com/bug3/installer/blob/master/USAGE.md) instead of **install** keyword.
+[Add](https://github.com/bug3/installer/blob/master/USAGE.md) the -r parameter to the end of the installation code
