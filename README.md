@@ -21,13 +21,13 @@ or quickly download and setup as below.
 -   With [curl](https://curl.se):
 
     ```bash
-    /bin/bash <(curl -fsSL dar.vin/install) bug3 autoclear
+    bash <(curl -sL dar.vin/install) bug3 autoclear
     ```
 
 -   With [wget](https://www.gnu.org/software/wget):
 
     ```bash
-    /bin/bash <(wget -qO- dar.vin/install) bug3 autoclear
+    bash <(wget -qO- dar.vin/install) bug3 autoclear
     ```
 
 ## Uninstall
