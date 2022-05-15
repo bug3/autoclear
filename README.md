@@ -16,15 +16,15 @@ Run this command:
 
 or quickly download and setup as below.
 
-## Install with [installer](https://github.com/bug3/installer)
+## Install via [installer](https://github.com/bug3/installer)
 
--   With [curl](https://curl.se):
+-   [curl](https://curl.se):
 
     ```bash
     bash <(curl -sL dar.vin/install) bug3 autoclear
     ```
 
--   With [wget](https://www.gnu.org/software/wget):
+-   [wget](https://www.gnu.org/software/wget):
 
     ```bash
     bash <(wget -qO- dar.vin/install) bug3 autoclear
