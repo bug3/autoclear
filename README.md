@@ -2,10 +2,6 @@
 
 autoclear keeps the console clean so there is no need to use the [clear](<https://en.wikipedia.org/wiki/Clear_(Unix)>) command.
 
-## Requirements
-
--   [Bash](https://www.gnu.org/software/bash)
-
 ## Build
 
 Run this command:
