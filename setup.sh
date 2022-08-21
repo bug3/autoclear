@@ -29,7 +29,6 @@ uninstall () {
     sudo bash -c "source $textEdit $rootPath/$shellrc; removeText"
 }
 
-[[ -e ~/.bashrc ]] && shellrc=".bashrc" || shellrc=".bash_profile"
 [[ "$OSTYPE" == "darwin"* ]] && rootPath="/var/root" || rootPath="/root"
 
 source $textEdit ~/$shellrc
