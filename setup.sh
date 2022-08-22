@@ -7,7 +7,7 @@ textEdit="append-remove.sh"
 finishMessage="Restart the console to apply changes"
 shellrc=".$(basename $(echo $SHELL))rc"
 
-install () {
+install() {
     chmod u+x $fileName
 
     if [[ ! -e $toolPath ]]; then
@@ -23,7 +23,7 @@ install () {
     sudo bash -c "source $textEdit $rootPath/$shellrc; appendText"
 }
 
-uninstall () {
+uninstall() {
     sudo rm -r $toolPath
 
     removeText
@@ -35,9 +35,9 @@ uninstall () {
 source $textEdit ~/$shellrc
 
 if [ $# -eq 0 ]; then
-	install
+    install
 elif [ $1 == "-r" ]; then
-	uninstall
+    uninstall
 fi
 
 echo -e "\033[31m\033[1m$finishMessage\033[0m"

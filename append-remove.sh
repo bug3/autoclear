@@ -6,19 +6,19 @@ tempFile=.autoclear.tmp
 
 cp $destFile $destFile.bak
 
-appendText () {
+appendText() {
     wordCount=$([[ -f $destFile ]] && cat $destFile | wc -w)
 
     ed -s $destFile <<< w
-    
+
     if [[ $wordCount -eq 0 ]]; then
         tail -n +2 $textFile > $destFile
     else
         cat $textFile >> $destFile
-    fi    
+    fi
 }
 
-removeText () {
+removeText() {
     wordCount=$(grep -o "$(cat $textFile)" $destFile | wc -l)
     isTextExists=$([[ $wordCount -ne 0 ]] && echo true || echo false)
 
