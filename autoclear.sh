@@ -1,11 +1,19 @@
 #!/bin/bash
 
+precmd () {
+  if [[ $autoclearStatus == "preexec" ]]; then
+    echo ""
+  fi
+}
+
 preexec () {
   clear
 
   if [[ $1 != "" ]]; then
+    autoclearStatus="preexec"
+
     echo -e "\033[36m\033[4m$1\n\033[0m"
-    
+
     [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
   fi
 }
