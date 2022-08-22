@@ -3,10 +3,11 @@
 preexec () {
   clear
 
-  echo -e "\033[36m\033[4m$1\033[0m"
-  echo ""
-
-  [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
+  if [[ $1 != "" ]]; then
+    echo -e "\033[36m\033[4m$1\n\033[0m"
+    
+    [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
+  fi
 }
 
 exec_last_command () {
