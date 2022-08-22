@@ -5,6 +5,7 @@ fileName="$toolName.sh"
 toolPath="/usr/share/$toolName"
 textEdit="append-remove.sh"
 finishMessage="Restart the console to apply changes"
+shellrc=".$(basename $(echo $SHELL))rc"
 
 install () {
     chmod u+x $fileName
