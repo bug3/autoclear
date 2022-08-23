@@ -9,11 +9,9 @@ precmd() {
 }
 
 preexec() {
-    currentCommand=$(echo $1 | xargs)
-
     clear
 
-    if [[ $1 != "" && $currentCommand != "clear" ]]; then
+    if [[ $1 != "" && $1 != "clear" ]]; then
         autoclearStatus="C-137"
 
         echo -e "\033[36m\033[4m$1\n\033[0m"
