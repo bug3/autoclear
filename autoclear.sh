@@ -1,5 +1,7 @@
 #!/bin/bash
 
+oldPrompt=$PS1
+
 precmd() {
     if [[ $autoclearStatus == "preexec" ]]; then
         echo ""
@@ -17,6 +19,8 @@ preexec() {
         echo -e "\033[36m\033[4m$1\n\033[0m"
 
         [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
+    else
+        export PS1=$oldPrompt
     fi
 }
 
