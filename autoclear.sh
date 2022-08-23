@@ -3,7 +3,7 @@
 oldPrompt=$PS1
 
 precmd() {
-    if [[ $autoclearStatus == "preexec" ]]; then
+    if [[ $autoclearStatus == "C-137" ]]; then
         echo ""
     fi
 }
@@ -14,12 +14,14 @@ preexec() {
     clear
 
     if [[ $1 != "" && $currentCommand != "clear" ]]; then
-        autoclearStatus="preexec"
+        autoclearStatus="C-137"
 
         echo -e "\033[36m\033[4m$1\n\033[0m"
 
         [[ "$PS1" =~ "\n".* ]] || export PS1="\n$PS1"
     else
+        autoclearStatus="29A"
+        
         export PS1=$oldPrompt
     fi
 }
